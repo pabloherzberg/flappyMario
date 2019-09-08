@@ -34,6 +34,12 @@ function Mario(){
             yVel = 0
             this.y = height-height/10
         }
+        if(yVel>8){
+            yVel = 8
+        }
+        if(yVel<-8){
+            yVel = -8
+        }
         yVel += gravity
         this.y += yVel
     }
