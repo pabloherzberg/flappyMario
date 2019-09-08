@@ -31,13 +31,14 @@ function criarCena(){
         ctx.drawImage(img, 217, 249, 27, 28, width/8, height - height/10, width/8, width/8)
     }
 }
-//criarCena()
-img.onload = ()=>{
-    criarCena()
-}
 //função de caputa de toque
 function teclaPressionada(){
     mario.voar()
 }
-window.addEventListener('click', teclaPressionada)
 
+ctx.drawImage(img, 217, 249, 27, 28, width/2 -width/8, height - height/6, width/4, width/4)
+criarCena()
+
+
+window.addEventListener('click', teclaPressionada)
+window.addEventListener('keypress', teclaPressionada)
