@@ -3,7 +3,7 @@ function Mario(){
     this.x = width/8
     this.y = height/2
     let yVel = 0
-    let gravity = 0.1
+    let gravity = 1
     let upForce = -7
     let sX 
     let sY 
