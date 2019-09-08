@@ -3,8 +3,8 @@ function Mario(){
     this.x = width/8
     this.y = height/2
     let yVel = 0
-    let gravity = 0.09
-    let upForce = -8
+    let gravity = 0.1
+    let upForce = -7
     let sX 
     let sY 
     let sW 
@@ -12,7 +12,7 @@ function Mario(){
     this.voar = ()=>{
         yVel += upForce
         if(this.y<height/2){
-            yVel = -7
+            yVel = -6
         }
         sX = 173
         sY = 291
