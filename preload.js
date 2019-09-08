@@ -13,3 +13,4 @@ const img = new Image()
 const pipe = new Image()
 img.src = './sprites.png'
 pipe.src = './pipes.png'
+

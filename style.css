@@ -6,5 +6,19 @@
 }
 canvas{
     background-image: url('./background.jpg');
-    background-size: auto 100vh
+    background-size: auto 100vh;
+    z-index: 1;
+}
+#start{
+    display: block;
+    top: 50%;
+    position: absolute;
+    top:50%;
+    left:25%;
+    z-index: 2;
+    width: 50vw;
+    height: 10vh;
+    background-color: lightskyblue;
+    color: black;
+    font-size: 5vh
 }
