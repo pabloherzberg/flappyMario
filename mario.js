@@ -4,16 +4,13 @@ function Mario(){
     this.y = height/2
     let yVel = 0
     let gravity = 0.15
-    let upForce = -7
+    let upForce = -6
     let sX 
     let sY 
     let sW 
     let sH 
     this.voar = ()=>{
         yVel += upForce
-        if(this.y<height/2){
-            yVel = -6
-        }
         sX = 173
         sY = 291
         sW = 27
