@@ -5,14 +5,29 @@ function Canos(){
         alturaCanoCima = height/6
     }
     let alturaCanoBaixo = height - alturaCanoCima - height/5
-    let yPosCanoBaixo = alturaCanoCima + height/2.5
-    let sX = 622
-    let sY = 30
+    let yPosCanoBaixo = alturaCanoCima + height/2
     let sWidth = 136
     let sHeight = 565
     let dWidth = largura
-    this.xVel = -1
     ctx.fillStyle='white'
+    this.sX = 622
+    this.sY = 30
+    this.xVel = -1
+    if(score>8){
+        this.sX = 51
+        this.sY = 31
+        yPosCanoBaixo = alturaCanoCima + height/2.5
+    }
+    if(score>18){
+        this.sX = 240
+        this.sY = 29
+        yPosCanoBaixo = alturaCanoCima + height/2.725
+    }
+    if(score>28){
+        this.sX = 424
+        this.sY = 30
+        yPosCanoBaixo = alturaCanoCima + height/3
+    }
     this.x = width //usar o this para ser acessível como método
     this.colidiu = (mario)=>{
         if(mario.y<alturaCanoCima || mario.y>yPosCanoBaixo){
@@ -29,8 +44,8 @@ function Canos(){
     this.draw =()=>{
         ctx.save()
         ctx.scale(1,-1)
-        ctx.drawImage(pipe,sX, sY, sWidth, sHeight, this.x, 0, dWidth, alturaCanoCima*-1) //cano de cima
+        ctx.drawImage(pipe,this.sX, this.sY, sWidth, sHeight, this.x, 0, dWidth, alturaCanoCima*-1) //cano de cima
         ctx.restore()
-        ctx.drawImage(pipe,sX, sY, sWidth, sHeight, this.x, yPosCanoBaixo, dWidth, alturaCanoBaixo) //cano de baixo
+        ctx.drawImage(pipe,this.sX, this.sY, sWidth, sHeight, this.x, yPosCanoBaixo, dWidth, alturaCanoBaixo) //cano de baixo
     }
 }

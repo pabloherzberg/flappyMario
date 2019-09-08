@@ -14,3 +14,4 @@ const pipe = new Image()
 img.src = './sprites.png'
 pipe.src = './pipes.png'
 
+let score = 0

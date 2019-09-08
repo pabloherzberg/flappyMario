@@ -1,6 +1,5 @@
 let mario = new Mario()
 let arrayCanos = []
-let score = 0
 arrayCanos.push(new Canos())
 //criar cena
 function criarCena(){
@@ -18,7 +17,7 @@ function criarCena(){
             window.removeEventListener('click', teclaPressionada)
             mario.morrer()
         }
-        //remove do array o primeiro cano criado para liberar memória
+        //insere um novo cano e remove o último do array para liberar memória
         if(canos.x == width/2.5){
             arrayCanos.push(new Canos())
             if(arrayCanos.length>3){
@@ -29,17 +28,21 @@ function criarCena(){
             score++
         }
     }) 
-    console.log(score)
     let loop = requestAnimationFrame(criarCena)
     //parar
     if(mario.update() == 'chao'){
         cancelAnimationFrame(loop)
         ctx.clearRect(0,0,width,height)
         ctx.drawImage(img, 217, 249, 27, 28, width/8, height - height/10, width/8, width/8)
+        localStorage.setItem('ranking', score)
         window.location.href='index.html'
     }
     ctx.font='20px Arial'
-    ctx.fillText(score,width/2.5,30)
+    if(localStorage.getItem('ranking')!=null){
+        let ranking = localStorage.getItem('ranking')
+        ctx.fillText(`Última pontuação: ${ranking}`,width/4, 30)
+    }
+    ctx.fillText(score,width/2,60)
 }
 //função de caputa de toque
 function teclaPressionada(){
