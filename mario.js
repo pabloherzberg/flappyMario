@@ -4,7 +4,7 @@ function Mario(){
     this.y = height/2
     let yVel = 0
     let gravity = 0.15
-    let upForce = -6
+    let upForce = -6.9
     let sX 
     let sY 
     let sW 
