@@ -5,7 +5,7 @@ function Canos(){
         alturaCanoCima = height/6
     }
     let alturaCanoBaixo = height - alturaCanoCima - height/5
-    let yPosCanoBaixo = alturaCanoCima + height/3
+    let yPosCanoBaixo = alturaCanoCima + height/2.5
     let sX = 622
     let sY = 30
     let sWidth = 136
